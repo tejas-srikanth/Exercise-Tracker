@@ -1,7 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from "./navbar/Navbar"
+import CreateExercise from "./functionality/CreateExercise"
+import CreateUser from "./functionality/CreateUser"
+import EditExercise from "./functionality/EditExercise"
+import ExercisesList from "./functionality/ExercisesList"
+
 
 function App() {
   return (
