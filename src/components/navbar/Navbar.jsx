@@ -13,7 +13,7 @@ function Navbar(){
                     <li className="navbar-item">
                         <Link to="/create" className="nav-link">Create Exercise Log</Link>
                     </li>
-                    <li class="navbar-item">
+                    <li className="navbar-item">
                         <Link to="/user" className="nav-link">Create New User</Link>
                     </li>
                 </ul>
