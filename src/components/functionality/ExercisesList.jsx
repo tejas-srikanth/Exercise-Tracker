@@ -8,7 +8,7 @@ function ExercisesList() {
     let [exercises, setExercises] = useState([])
     
     useEffect( () => {
-        //get all of the exercise logs
+        //get all of the exercise logsgit ad
         axios.get("http://localhost:5000/exercises/")
         .then(res => 
             {
