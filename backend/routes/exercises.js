@@ -49,10 +49,10 @@ router.route("/update/:id")
 .post((req, res) => {
     Exercise.findById(req.params.id)
     .then(exercise => {
-        exercise.username = req.query.username;
-        exercise.description = req.query.description;
-        exercise.duration = Number(req.query.duration)
-        exercise.date = Date.parse(req.query.date)
+        exercise.username = req.body.username;
+        exercise.description = req.body.description;
+        exercise.duration = Number(req.body.duration)
+        exercise.date = Date.parse(req.body.date)
 
         exercise.save()
         .then(() => res.json("Successfully updated item"))

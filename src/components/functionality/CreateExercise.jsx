@@ -1,12 +1,11 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import DatePicker from "react-datepicker"
 import axios from "axios";
 
 function CreateExercise(props){
     const [exerciseLog, setExerciseLog] = useState({username: "", description: "", duration: 0, date: new Date(), users: []});
-    const [beenCalled, setBeenCalled] = useState(false);
      
-    if (!beenCalled){
+    useEffect(() => {
         axios.get("http://localhost:5000/users")
         .then(response => (
             setExerciseLog(prevValue => (
@@ -16,8 +15,7 @@ function CreateExercise(props){
         )
         .catch(err => console.log("Error "+err)
         )
-        setBeenCalled(prevValue => !prevValue)
-    }
+    }, []);
 
     function onChangeField(event){
         const {name, value} = event.target
