@@ -13,8 +13,7 @@ function CreateExercise(props){
                 ))
             )
         )
-        .catch(err => console.log("Error "+err)
-        )
+        .catch(err => console.log("Error "+err))
     }, []);
 
     function onChangeField(event){
@@ -26,12 +25,10 @@ function CreateExercise(props){
 
     function onChangeUsername(event){
         const value = event.target.value;
-        console.log(value);
         
         setExerciseLog(prevValue => (
             {...prevValue, username: value}
         ))
-        console.log(exerciseLog)
     }
 
     function onChangeDate(date){
@@ -50,7 +47,6 @@ function CreateExercise(props){
             date: exerciseLog.date
         }
 
-        console.log(newExercise);
         axios.post("http://localhost:5000/exercises/add", newExercise)
         .then(res => console.log(res.data))
 
@@ -63,7 +59,7 @@ function CreateExercise(props){
         <div>
             <h3>Create New Exercise Page</h3>
             <form onSumbit={onSubmit}>
-
+                
                 <div className="form-group">
                     <label>Username: </label>
                     <select required className="form-control" value={exerciseLog.username} onChange={onChangeUsername} name="username">

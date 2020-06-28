@@ -10,7 +10,6 @@ function EditExercise(props){
         //get the exercise matching the id
         axios.get("http://localhost:5000/exercises/"+props.match.params.id)
         .then(response => {
-            console.log(response.data)
             setExerciseLog(prevValue => ({...prevValue,
                 username: response.data.username,
                 description: response.data.description,
@@ -23,13 +22,12 @@ function EditExercise(props){
         //get all the users for the select tag
         axios.get("http://localhost:5000/users/")
         .then(response => {
-            console.log(response.data)
             setExerciseLog(prevValue => (
                 {...prevValue, users: response.data.map(user => user.username)}
             ))
         })
 
-    }, []);
+    }, [props.match.params.id]);
 
     function onChangeField(event){
         const {name, value} = event.target
@@ -40,12 +38,10 @@ function EditExercise(props){
 
     function onChangeUsername(event){
         const value = event.target.value;
-        console.log(value);
         
         setExerciseLog(prevValue => (
             {...prevValue, username: value}
         ))
-        console.log(exerciseLog)
     }
 
     function onChangeDate(date){

@@ -11,17 +11,14 @@ function CreateUser(){
     }
 
     function onSubmit(event){
-
         event.preventDefault()
         const newUser = {
             username: username.username
         }
-        console.log(newUser)
         axios.post("http://localhost:5000/users/add", newUser)
         .then(res => console.log(res.data))
 
         setUsername({username: ""})
-
     }
 
     return (
