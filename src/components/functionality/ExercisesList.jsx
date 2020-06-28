@@ -8,6 +8,7 @@ function ExercisesList() {
     let [exercises, setExercises] = useState([])
     
     useEffect( () => {
+        //get all of the exercise logs
         axios.get("http://localhost:5000/exercises/")
         .then(res => 
             {
@@ -17,6 +18,7 @@ function ExercisesList() {
     }, [])
 
     function deleteExercise(id){
+        ///delete exercise with the specific id
         axios.delete("http://localhost:5000/exercises/"+id)
         .then(res => console.log(res.data))
 

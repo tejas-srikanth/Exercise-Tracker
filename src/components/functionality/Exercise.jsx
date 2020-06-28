@@ -8,9 +8,9 @@ function Exercise(props){
             <td>{props.username}</td>
             <td>{props.description}</td>
             <td>{props.duration}</td>
-            <td>{props.date}</td>
+            <td>{props.date.substring(0, 10)}</td>
             <td>
-            <Link to={"/edit/"+props.id}>Edit</Link> | <a href="/exercises/" onClick={() => props.deleteExercise(props.id)}>Delete</a>
+                <Link to={"/edit/"+props.id}>Edit</Link> | <a href="/exercises/" onClick={() => props.deleteExercise(props.id)}>Delete</a>
             </td>
         </tr>
     )
