@@ -70,7 +70,7 @@ function EditExercise(props){
 
     return (
         <div>
-            <h3>Create New Exercise Page</h3>
+            <h3>Edit Exercise Page</h3>
             <form onSumbit={onSubmit}>
 
                 <div className="form-group">
